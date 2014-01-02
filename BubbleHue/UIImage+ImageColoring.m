@@ -177,63 +177,107 @@ static inline void HSLToRGB(CGFloat h, CGFloat s, CGFloat l, CGFloat * r, CGFloa
 	
 	return image;
 }
+//
+//- (UIColor *) averageColorAtPixel:(CGPoint)pixel radius:(CGFloat)radius {
+//	if ([self respondsToSelector:@selector(scale)]) {
+//		CGFloat scale = [self scale];
+//		pixel = CGPointMake(pixel.x*scale, pixel.y*scale);
+//		radius *= scale;
+//	}
+//	
+//	void * bitmapData = NULL;
+//	CGContextRef context = CKBitmapContextAndDataCreateWithImage([self CGImage], &bitmapData);
+//	
+//	UInt32 * data = bitmapData;
+//	
+//	size_t width = CGBitmapContextGetWidth(context);
+//	size_t height = CGBitmapContextGetHeight(context);
+//	
+//    size_t minX = fminf(fmaxf(pixel.x - radius, 0), width-1);
+//    size_t maxX = fminf(fmaxf(pixel.x + radius, 0), width-1);
+//    size_t minY = fminf(fmaxf(pixel.y - radius, 0), height-1);
+//    size_t maxY = fminf(fmaxf(pixel.y + radius, 0), height-1);
+//	
+//	size_t count = 0;
+//	CGFloat totalH = 0.0, totalS = 0.0, totalL = 0.0, totalA = 0.0;
+//	
+//	CGFloat radiusSquared = radius*radius;
+//	
+//    for (int x = minX; x <= maxX; x++) {
+//        for (int y = minY; y <= maxY; y++) {
+//			CGFloat dx = x-pixel.x;
+//			CGFloat dy = y-pixel.y;
+//			if (dx*dx+dy*dy > radiusSquared)
+//				continue;
+//			
+//			NSUInteger index = y*width+x;
+//			UInt32 color = data[index];
+//			int rInt, gInt, bInt, aInt;
+//			UInt32ToRGB(color, &rInt, &gInt, &bInt, &aInt);
+//			CGFloat h, s, l;
+//			CGFloat r = rInt/255.0, g = gInt/255.0, b = bInt/255.0;
+//			RGBToHSL(r, g, b, &h, &s, &l);
+//			
+//			totalH += h;
+//			totalS += s;
+//			totalL += l;
+//			totalA += aInt/255.0;
+//			
+//			count++;
+//		}
+//    }
+//	
+//	CGContextRelease(context);
+//	free(bitmapData);
+//	
+//	CGFloat r, g, b;
+//	HSLToRGB(totalH/count, totalS/count, totalL/count, &r, &g, &b);
+//	
+//	return [UIColor colorWithRed:r green:g blue:b alpha:totalA/count];
+//}
 
-- (UIColor *) averageColorAtPixel:(CGPoint)pixel radius:(CGFloat)radius {
-	if ([self respondsToSelector:@selector(scale)]) {
-		CGFloat scale = [self scale];
-		pixel = CGPointMake(pixel.x*scale, pixel.y*scale);
-		radius *= scale;
-	}
-	
-	void * bitmapData = NULL;
-	CGContextRef context = CKBitmapContextAndDataCreateWithImage([self CGImage], &bitmapData);
-	
-	UInt32 * data = bitmapData;
-	
-	size_t width = CGBitmapContextGetWidth(context);
-	size_t height = CGBitmapContextGetHeight(context);
-	
-    size_t minX = fminf(fmaxf(pixel.x - radius, 0), width-1);
-    size_t maxX = fminf(fmaxf(pixel.x + radius, 0), width-1);
-    size_t minY = fminf(fmaxf(pixel.y - radius, 0), height-1);
-    size_t maxY = fminf(fmaxf(pixel.y + radius, 0), height-1);
-	
-	size_t count = 0;
-	CGFloat totalH = 0.0, totalS = 0.0, totalL = 0.0, totalA = 0.0;
-	
-	CGFloat radiusSquared = radius*radius;
-	
-    for (int x = minX; x <= maxX; x++) {
-        for (int y = minY; y <= maxY; y++) {
-			CGFloat dx = x-pixel.x;
-			CGFloat dy = y-pixel.y;
-			if (dx*dx+dy*dy > radiusSquared)
-				continue;
-			
-			NSUInteger index = y*width+x;
-			UInt32 color = data[index];
-			int rInt, gInt, bInt, aInt;
-			UInt32ToRGB(color, &rInt, &gInt, &bInt, &aInt);
-			CGFloat h, s, l;
-			CGFloat r = rInt/255.0, g = gInt/255.0, b = bInt/255.0;
-			RGBToHSL(r, g, b, &h, &s, &l);
-			
-			totalH += h;
-			totalS += s;
-			totalL += l;
-			totalA += aInt/255.0;
-			
-			count++;
-		}
+- (UIColor *)colorAtPixel:(CGPoint)point
+{
+    // Cancel if point is outside image coordinates
+    if (!CGRectContainsPoint(CGRectMake(0.0f, 0.0f, self.size.width, self.size.height), point)) {
+        return nil;
     }
-	
-	CGContextRelease(context);
-	free(bitmapData);
-	
-	CGFloat r, g, b;
-	HSLToRGB(totalH/count, totalS/count, totalL/count, &r, &g, &b);
-	
-	return [UIColor colorWithRed:r green:g blue:b alpha:totalA/count];
+    
+    // Create a 1x1 pixel byte array and bitmap context to draw the pixel into.
+    // Reference: http://stackoverflow.com/questions/1042830/retrieving-a-pixel-alpha-value-for-a-uiimage
+    NSInteger pointX = trunc(point.x);
+    NSInteger pointY = trunc(point.y);
+    CGImageRef cgImage = self.CGImage;
+    NSUInteger width = self.size.width;
+    NSUInteger height = self.size.height;
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    int bytesPerPixel = 4;
+    int bytesPerRow = bytesPerPixel * 1;
+    NSUInteger bitsPerComponent = 8;
+    unsigned char pixelData[4] = { 0, 0, 0, 0 };
+    CGContextRef context = CGBitmapContextCreate(pixelData,
+                                                 1,
+                                                 1,
+                                                 bitsPerComponent,
+                                                 bytesPerRow,
+                                                 colorSpace,
+                                                 kCGImageAlphaPremultipliedLast | kCGBitmapByteOrder32Big);
+    CGColorSpaceRelease(colorSpace);
+    CGContextSetBlendMode(context, kCGBlendModeCopy);
+    
+    // Draw the pixel we are interested in onto the bitmap context
+    CGContextTranslateCTM(context, -pointX, pointY-(CGFloat)height);
+    CGContextDrawImage(context, CGRectMake(0.0f, 0.0f, (CGFloat)width, (CGFloat)height), cgImage);
+    CGContextRelease(context);
+    
+    // Convert color values [0..255] to floats [0.0..1.0]
+    CGFloat red   = (CGFloat)pixelData[0] / 255.0f;
+    CGFloat green = (CGFloat)pixelData[1] / 255.0f;
+    CGFloat blue  = (CGFloat)pixelData[2] / 255.0f;
+    CGFloat alpha = (CGFloat)pixelData[3] / 255.0f;
+    return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
 }
+
+
 
 @end

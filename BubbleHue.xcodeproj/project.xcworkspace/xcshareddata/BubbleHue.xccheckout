@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>3A9DA19C-5ACA-47E8-A924-BD8E03CF0B06</string>
+	<key>IDESourceControlProjectName</key>
+	<string>BubbleHue</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>52CC01AC-35BD-4583-A02A-10A0EF231220</key>
+		<string>ssh://github.com/stephensilber/BubbleHue.git</string>
+		<key>DAD56869-9137-4D7D-9C0B-E3D3A4562DA7</key>
+		<string>https://github.com/DHowett/cydelete.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>BubbleHue.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>52CC01AC-35BD-4583-A02A-10A0EF231220</key>
+		<string>../..</string>
+		<key>DAD56869-9137-4D7D-9C0B-E3D3A4562DA7</key>
+		<string>../../../../Github/cydelete</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/stephensilber/BubbleHue.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>52CC01AC-35BD-4583-A02A-10A0EF231220</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>52CC01AC-35BD-4583-A02A-10A0EF231220</string>
+			<key>IDESourceControlWCCName</key>
+			<string>BubbleHue</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>DAD56869-9137-4D7D-9C0B-E3D3A4562DA7</string>
+			<key>IDESourceControlWCCName</key>
+			<string>cydelete</string>
+		</dict>
+	</array>
+</dict>
+</plist>

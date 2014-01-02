@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC6369CA187575EA0042CA86 /* UIImage+Tint.h in Headers */ = {isa = PBXBuildFile; fileRef = DC6369C8187575EA0042CA86 /* UIImage+Tint.h */; };
+		DC6369CB187575EA0042CA86 /* UIImage+Tint.m in Sources */ = {isa = PBXBuildFile; fileRef = DC6369C9187575EA0042CA86 /* UIImage+Tint.m */; };
 		DC66938218752C5700CCF81A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC66938118752C5700CCF81A /* Foundation.framework */; };
 		DC66939318752C5700CCF81A /* BubbleHue.mm in Sources */ = {isa = PBXBuildFile; fileRef = DC66939218752C5700CCF81A /* BubbleHue.mm */; };
 		DC6693A018752D3800CCF81A /* CoreGraphicsAdditions.c in Sources */ = {isa = PBXBuildFile; fileRef = DC66939C18752D3800CCF81A /* CoreGraphicsAdditions.c */; };
@@ -17,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DC6369C8187575EA0042CA86 /* UIImage+Tint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Tint.h"; sourceTree = "<group>"; };
+		DC6369C9187575EA0042CA86 /* UIImage+Tint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Tint.m"; sourceTree = "<group>"; };
+		DC6369CC18757BF40042CA86 /* HueScale.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HueScale.png; sourceTree = "<group>"; };
 		DC66937E18752C5700CCF81A /* BubbleHue.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = BubbleHue.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC66938118752C5700CCF81A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DC66938618752C5700CCF81A /* control.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = control.txt; path = Package/DEBIAN/control.txt; sourceTree = "<group>"; };
@@ -84,6 +89,8 @@
 				DC66939D18752D3800CCF81A /* CoreGraphicsAdditions.h */,
 				DC66939E18752D3800CCF81A /* UIImage+ImageColoring.h */,
 				DC66939F18752D3800CCF81A /* UIImage+ImageColoring.m */,
+				DC6369C8187575EA0042CA86 /* UIImage+Tint.h */,
+				DC6369C9187575EA0042CA86 /* UIImage+Tint.m */,
 				DC66938418752C5700CCF81A /* Package */,
 				DC66938818752C5700CCF81A /* Supporting Files */,
 			);
@@ -137,6 +144,7 @@
 		DC66938C18752C5700CCF81A /* Preferences */ = {
 			isa = PBXGroup;
 			children = (
+				DC6369CC18757BF40042CA86 /* HueScale.png */,
 				DC66938D18752C5700CCF81A /* BubbleHue.plist */,
 				DC66938E18752C5700CCF81A /* BubbleHueIcon.png */,
 				DC66938F18752C5700CCF81A /* BubbleHueIcon@2x.png */,
@@ -169,6 +177,7 @@
 			files = (
 				DC6693A118752D3800CCF81A /* CoreGraphicsAdditions.h in Headers */,
 				DC6693A218752D3800CCF81A /* UIImage+ImageColoring.h in Headers */,
+				DC6369CA187575EA0042CA86 /* UIImage+Tint.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC6369CB187575EA0042CA86 /* UIImage+Tint.m in Sources */,
 				DC6693A318752D3800CCF81A /* UIImage+ImageColoring.m in Sources */,
 				DC66939318752C5700CCF81A /* BubbleHue.mm in Sources */,
 				DC6693A018752D3800CCF81A /* CoreGraphicsAdditions.c in Sources */,
@@ -326,6 +336,10 @@
 				CODE_SIGN_IDENTITY = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/stephen/Jailbreak/BubbleHue,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BubbleHue/BubbleHue-Prefix.pch";
 				INSTALL_PATH = /Library/MobileSubstrate/DynamicLibraries;
@@ -350,6 +364,10 @@
 				CODE_SIGN_IDENTITY = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/stephen/Jailbreak/BubbleHue,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BubbleHue/BubbleHue-Prefix.pch";
 				INSTALL_PATH = /Library/MobileSubstrate/DynamicLibraries;
@@ -387,6 +405,7 @@
 				DC66939B18752C5700CCF81A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

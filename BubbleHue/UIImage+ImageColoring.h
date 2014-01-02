@@ -42,6 +42,7 @@
  @param      radius      The radius of the circle
  @return     The average color
  */
-- (UIColor *) averageColorAtPixel:(CGPoint)pixel radius:(CGFloat)radius;
+//- (UIColor *) averageColorAtPixel:(CGPoint)pixel radius:(CGFloat)radius;
+- (UIColor *)colorAtPixel:(CGPoint)point;
 
 @end
