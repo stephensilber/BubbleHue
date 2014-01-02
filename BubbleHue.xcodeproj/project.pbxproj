@@ -1,0 +1,394 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DC66938218752C5700CCF81A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC66938118752C5700CCF81A /* Foundation.framework */; };
+		DC66939318752C5700CCF81A /* BubbleHue.mm in Sources */ = {isa = PBXBuildFile; fileRef = DC66939218752C5700CCF81A /* BubbleHue.mm */; };
+		DC6693A018752D3800CCF81A /* CoreGraphicsAdditions.c in Sources */ = {isa = PBXBuildFile; fileRef = DC66939C18752D3800CCF81A /* CoreGraphicsAdditions.c */; };
+		DC6693A118752D3800CCF81A /* CoreGraphicsAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = DC66939D18752D3800CCF81A /* CoreGraphicsAdditions.h */; };
+		DC6693A218752D3800CCF81A /* UIImage+ImageColoring.h in Headers */ = {isa = PBXBuildFile; fileRef = DC66939E18752D3800CCF81A /* UIImage+ImageColoring.h */; };
+		DC6693A318752D3800CCF81A /* UIImage+ImageColoring.m in Sources */ = {isa = PBXBuildFile; fileRef = DC66939F18752D3800CCF81A /* UIImage+ImageColoring.m */; };
+		DC6693A518752D7900CCF81A /* libsubstrate.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6693A418752D7900CCF81A /* libsubstrate.dylib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		DC66937E18752C5700CCF81A /* BubbleHue.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = BubbleHue.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC66938118752C5700CCF81A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DC66938618752C5700CCF81A /* control.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = control.txt; path = Package/DEBIAN/control.txt; sourceTree = "<group>"; };
+		DC66938718752C5700CCF81A /* control */ = {isa = PBXFileReference; lastKnownFileType = text; name = control; path = Package/DEBIAN/control; sourceTree = "<group>"; };
+		DC66938918752C5700CCF81A /* PackageVersion.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = PackageVersion.plist; sourceTree = "<group>"; };
+		DC66938D18752C5700CCF81A /* BubbleHue.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = BubbleHue.plist; path = Package/Library/PreferenceLoader/Preferences/BubbleHue.plist; sourceTree = "<group>"; };
+		DC66938E18752C5700CCF81A /* BubbleHueIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BubbleHueIcon.png; path = Package/Library/PreferenceLoader/Preferences/BubbleHueIcon.png; sourceTree = "<group>"; };
+		DC66938F18752C5700CCF81A /* BubbleHueIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "BubbleHueIcon@2x.png"; path = "Package/Library/PreferenceLoader/Preferences/BubbleHueIcon@2x.png"; sourceTree = "<group>"; };
+		DC66939018752C5700CCF81A /* BubbleHue-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BubbleHue-Prefix.pch"; sourceTree = "<group>"; };
+		DC66939118752C5700CCF81A /* BubbleHue.xm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = BubbleHue.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		DC66939218752C5700CCF81A /* BubbleHue.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = BubbleHue.mm; sourceTree = "<group>"; };
+		DC66939618752C5700CCF81A /* BubbleHue.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = BubbleHue.plist; path = Package/Library/MobileSubstrate/DynamicLibraries/BubbleHue.plist; sourceTree = "<group>"; };
+		DC66939C18752D3800CCF81A /* CoreGraphicsAdditions.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = CoreGraphicsAdditions.c; sourceTree = "<group>"; };
+		DC66939D18752D3800CCF81A /* CoreGraphicsAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreGraphicsAdditions.h; sourceTree = "<group>"; };
+		DC66939E18752D3800CCF81A /* UIImage+ImageColoring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageColoring.h"; sourceTree = "<group>"; };
+		DC66939F18752D3800CCF81A /* UIImage+ImageColoring.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageColoring.m"; sourceTree = "<group>"; };
+		DC6693A418752D7900CCF81A /* libsubstrate.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsubstrate.dylib; path = ../../../../opt/iOSOpenDev/lib/libsubstrate.dylib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DC66937A18752C5700CCF81A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC6693A518752D7900CCF81A /* libsubstrate.dylib in Frameworks */,
+				DC66938218752C5700CCF81A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DC66937318752C5700CCF81A = {
+			isa = PBXGroup;
+			children = (
+				DC66938318752C5700CCF81A /* BubbleHue */,
+				DC66938018752C5700CCF81A /* Frameworks */,
+				DC66937F18752C5700CCF81A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DC66937F18752C5700CCF81A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DC66937E18752C5700CCF81A /* BubbleHue.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DC66938018752C5700CCF81A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DC6693A418752D7900CCF81A /* libsubstrate.dylib */,
+				DC66938118752C5700CCF81A /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DC66938318752C5700CCF81A /* BubbleHue */ = {
+			isa = PBXGroup;
+			children = (
+				DC66939118752C5700CCF81A /* BubbleHue.xm */,
+				DC66939218752C5700CCF81A /* BubbleHue.mm */,
+				DC66939C18752D3800CCF81A /* CoreGraphicsAdditions.c */,
+				DC66939D18752D3800CCF81A /* CoreGraphicsAdditions.h */,
+				DC66939E18752D3800CCF81A /* UIImage+ImageColoring.h */,
+				DC66939F18752D3800CCF81A /* UIImage+ImageColoring.m */,
+				DC66938418752C5700CCF81A /* Package */,
+				DC66938818752C5700CCF81A /* Supporting Files */,
+			);
+			path = BubbleHue;
+			sourceTree = "<group>";
+		};
+		DC66938418752C5700CCF81A /* Package */ = {
+			isa = PBXGroup;
+			children = (
+				DC66938518752C5700CCF81A /* DEBIAN */,
+				DC66938A18752C5700CCF81A /* Library */,
+			);
+			name = Package;
+			sourceTree = "<group>";
+		};
+		DC66938518752C5700CCF81A /* DEBIAN */ = {
+			isa = PBXGroup;
+			children = (
+				DC66938618752C5700CCF81A /* control.txt */,
+				DC66938718752C5700CCF81A /* control */,
+			);
+			name = DEBIAN;
+			sourceTree = "<group>";
+		};
+		DC66938818752C5700CCF81A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DC66938918752C5700CCF81A /* PackageVersion.plist */,
+				DC66939018752C5700CCF81A /* BubbleHue-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DC66938A18752C5700CCF81A /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				DC66938B18752C5700CCF81A /* PreferenceLoader */,
+				DC66939418752C5700CCF81A /* MobileSubstrate */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
+		DC66938B18752C5700CCF81A /* PreferenceLoader */ = {
+			isa = PBXGroup;
+			children = (
+				DC66938C18752C5700CCF81A /* Preferences */,
+			);
+			name = PreferenceLoader;
+			sourceTree = "<group>";
+		};
+		DC66938C18752C5700CCF81A /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				DC66938D18752C5700CCF81A /* BubbleHue.plist */,
+				DC66938E18752C5700CCF81A /* BubbleHueIcon.png */,
+				DC66938F18752C5700CCF81A /* BubbleHueIcon@2x.png */,
+			);
+			name = Preferences;
+			sourceTree = "<group>";
+		};
+		DC66939418752C5700CCF81A /* MobileSubstrate */ = {
+			isa = PBXGroup;
+			children = (
+				DC66939518752C5700CCF81A /* DynamicLibraries */,
+			);
+			name = MobileSubstrate;
+			sourceTree = "<group>";
+		};
+		DC66939518752C5700CCF81A /* DynamicLibraries */ = {
+			isa = PBXGroup;
+			children = (
+				DC66939618752C5700CCF81A /* BubbleHue.plist */,
+			);
+			name = DynamicLibraries;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		DC66937B18752C5700CCF81A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC6693A118752D3800CCF81A /* CoreGraphicsAdditions.h in Headers */,
+				DC6693A218752D3800CCF81A /* UIImage+ImageColoring.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		DC66937D18752C5700CCF81A /* BubbleHue */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC66939918752C5700CCF81A /* Build configuration list for PBXNativeTarget "BubbleHue" */;
+			buildPhases = (
+				DC66937818752C5700CCF81A /* ShellScript */,
+				DC66937918752C5700CCF81A /* Sources */,
+				DC66937A18752C5700CCF81A /* Frameworks */,
+				DC66937B18752C5700CCF81A /* Headers */,
+				DC66937C18752C5700CCF81A /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BubbleHue;
+			productName = BubbleHue;
+			productReference = DC66937E18752C5700CCF81A /* BubbleHue.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DC66937418752C5700CCF81A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+			};
+			buildConfigurationList = DC66937718752C5700CCF81A /* Build configuration list for PBXProject "BubbleHue" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = DC66937318752C5700CCF81A;
+			productRefGroup = DC66937F18752C5700CCF81A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DC66937D18752C5700CCF81A /* BubbleHue */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		DC66937818752C5700CCF81A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/opt/iOSOpenDev/bin/iosod --xcbp-logos";
+		};
+		DC66937C18752C5700CCF81A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/opt/iOSOpenDev/bin/iosod --xcbp";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DC66937918752C5700CCF81A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC6693A318752D3800CCF81A /* UIImage+ImageColoring.m in Sources */,
+				DC66939318752C5700CCF81A /* BubbleHue.mm in Sources */,
+				DC6693A018752D3800CCF81A /* CoreGraphicsAdditions.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		DC66939718752C5700CCF81A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_ENABLE_MODULES = YES;
+				COPY_PHASE_STRIP = NO;
+				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(iOSOpenDevPath)/frameworks/**",
+					"$(SDKROOT)/System/Library/PrivateFrameworks",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(iOSOpenDevPath)/include/**";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = "$(iOSOpenDevPath)/lib/**";
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = NO;
+				iOSOpenDevPath = /opt/iOSOpenDev;
+			};
+			name = Debug;
+		};
+		DC66939818752C5700CCF81A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_ENABLE_MODULES = YES;
+				COPY_PHASE_STRIP = YES;
+				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(iOSOpenDevPath)/frameworks/**",
+					"$(SDKROOT)/System/Library/PrivateFrameworks",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(iOSOpenDevPath)/include/**";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = "$(iOSOpenDevPath)/lib/**";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				iOSOpenDevPath = /opt/iOSOpenDev;
+			};
+			name = Release;
+		};
+		DC66939A18752C5700CCF81A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BubbleHue/BubbleHue-Prefix.pch";
+				INSTALL_PATH = /Library/MobileSubstrate/DynamicLibraries;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/iOSOpenDev/lib,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				iOSOpenDevBuildPackageOnAnyBuild = NO;
+				iOSOpenDevCopyOnBuild = NO;
+				iOSOpenDevDevice = "";
+				iOSOpenDevInstallOnAnyBuild = NO;
+				iOSOpenDevInstallOnProfiling = YES;
+				iOSOpenDevRespringOnInstall = YES;
+				iOSOpenDevUsePackageVersionPList = YES;
+			};
+			name = Debug;
+		};
+		DC66939B18752C5700CCF81A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BubbleHue/BubbleHue-Prefix.pch";
+				INSTALL_PATH = /Library/MobileSubstrate/DynamicLibraries;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/iOSOpenDev/lib,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				iOSOpenDevBuildPackageOnAnyBuild = NO;
+				iOSOpenDevCopyOnBuild = NO;
+				iOSOpenDevDevice = "";
+				iOSOpenDevInstallOnAnyBuild = NO;
+				iOSOpenDevInstallOnProfiling = YES;
+				iOSOpenDevRespringOnInstall = YES;
+				iOSOpenDevUsePackageVersionPList = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DC66937718752C5700CCF81A /* Build configuration list for PBXProject "BubbleHue" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC66939718752C5700CCF81A /* Debug */,
+				DC66939818752C5700CCF81A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC66939918752C5700CCF81A /* Build configuration list for PBXNativeTarget "BubbleHue" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC66939A18752C5700CCF81A /* Debug */,
+				DC66939B18752C5700CCF81A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DC66937418752C5700CCF81A /* Project object */;
+}

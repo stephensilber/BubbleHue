@@ -1,0 +1,17 @@
+Package: stephensilber.BubbleHue
+Name: BubbleHue
+Version: 1.0-1
+Description: Adjusts the color of the chat bubbles under Messages.app by changing the hue (0-360)
+Section: Tweaks
+Depends: firmware (>= 7.0), mobilesubstrate
+Conflicts: 
+Replaces: 
+Priority: optional
+Architecture: iphoneos-arm
+Author: Stephen Silber
+dev: 
+Homepage: http://github.com/stephensilber
+Depiction: 
+Maintainer: 
+Icon: 
+
