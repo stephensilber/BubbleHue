@@ -19,6 +19,7 @@
 #define PreferencesChangedNotification "stephensilber.BubbleHue-preferencesChanged"
 #define PreferencesFilePath [NSHomeDirectory() stringByAppendingPathComponent:@"Library/Preferences/stephensilber.BubbleHue.plist"]
 
+/* Hack solution to determine the type of bubble we are tinting */
 #define TMred   0.4823529
 #define TMgreen 0.9294118
 #define TMblue  0.3882353
@@ -69,7 +70,7 @@ static void PreferencesChangedCallback(CFNotificationCenterRef center, void *obs
             color = [color imageTintedWithColor:[UIColor redColor]];
         }
         
-        // Check if iMessage or SMS ** HACK!!!
+        /* Compare colors to check if the bubble is iMessage or Text Message */
         for(UIDeviceRGBColor *colorString in [self colors]) {
             const CGFloat* components = CGColorGetComponents(colorString.CGColor);
             float redBalloon = floorf(components[0] * 100) / 100;
